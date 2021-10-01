@@ -1,5 +1,5 @@
 name: paylike_currencies
-description: Covers all the currencies supported on paylike.io platform
+description: Covers all the currencies supported on paylike.io platform and provides a handy interface for them
 version: 1.0.0
 homepage: https://paylike.io
 environment:

@@ -8,11 +8,11 @@ import 'package:source_gen/source_gen.dart';
 Builder currencyBuilder(BuilderOptions options) =>
     LibraryBuilder(CurrencyGenerator(), generatedExtension: '.currency.g.dart');
 
-/// Generates a single-line comment for each class
+/// Generates currency collection
 class CurrencyGenerator extends Generator {
   const CurrencyGenerator();
   @override
-  Future<String> generate(LibraryReader library, _) async {
+  Future<String> generate(LibraryReader library, BuildStep step) async {
     var f = File('./lib/src/currencies.json');
     var raw = f.readAsStringSync();
     List<dynamic> currencies = jsonDecode(raw);

@@ -1,11 +1,25 @@
 import 'package:paylike_currencies/paylike_currencies.dart';
+import 'dart:math';
 
+// Describes that a given currency the user is looking for
+// is missing from the collection
+class MissingCurrency implements Exception {
+  final String cause = 'Currency is missing';
+  CurrencyCode? code;
+  int? numeric;
+  MissingCurrency.fromNumeric(this.numeric);
+  MissingCurrency.fromCode(this.code);
+}
+
+// PaylikeCurrency describes a single currency in the collection
 class PaylikeCurrency {
   String code;
   String currency;
   int numeric;
   int exponent;
+  // Creates a PaylikeCurrency instance
   PaylikeCurrency(this.code, this.currency, this.numeric, this.exponent);
+  // Creates a PaylikeCurrency instance using JSON
   PaylikeCurrency.fromJSON(Map<String, dynamic> json)
       : code = json['code'],
         currency = json['currency'],
@@ -13,12 +27,32 @@ class PaylikeCurrency {
         exponent = json['exponent'];
 }
 
+// PaylikeCurrencies is responsible for currency related operations
 class PaylikeCurrencies {
+  // Provides a [PaylikeCurrency] based on [code]
   PaylikeCurrency byCode(CurrencyCode code) {
     var element = PaylikeCurrencyCollection.currencies[code];
     if (element == null) {
-      throw Exception('Code generation error');
+      throw MissingCurrency.fromCode(code);
     }
     return element;
   }
+
+// Provides a [PaylikeCurrency] based on [numeric]
+  PaylikeCurrency byNumeric(int numeric) {
+    var element = PaylikeCurrencyCollection.currencies.entries.firstWhere(
+        (element) => element.value.numeric == numeric,
+        orElse: () => throw MissingCurrency.fromNumeric(numeric));
+    return element.value;
+  }
+
+  // Converts a currency to minor value using its exponent
+  // e.g: 1 USD to cents
+  num toMinor(CurrencyCode code, num major) =>
+      (major * pow(10, byCode(code).exponent)).round();
+
+  // Converts a currency to major value using its exponent
+  // e.g: 100 cents to 1 USD
+  num toMajor(CurrencyCode code, num minor) =>
+      minor / pow(10, byCode(code).exponent);
 }

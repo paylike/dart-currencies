@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 3.1.0">
+  <meta name="description" content="paylike_currencies API docs, for the Dart programming language.">
+  <title>paylike_currencies - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href=""
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://paylike.io">paylike_currencies package</a></li>
+  </ol>
+  <div class="self-name">paylike_currencies</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="currencies">Currencies</h1>
+<p>This library is a clone of the <a href="https://github.com/paylike/currencies">JS version</a></p>
+<p>List of currencies supported by Paylike for transactions and accounts.</p>
+<p>Read more:</p>
+<ul>
+<li><a href="https://paylike.io/account/currency">https://paylike.io/account/currency</a></li>
+<li><a href="https://paylike.io/transactions/currencies">https://paylike.io/transactions/currencies</a></li>
+</ul>
+<h2 id="account-currencies">Account currencies</h2>
+<p>These are the currencies you can use as a base for your account. Also known as
+account, settlement and funding currency.</p>
+<h3 id="global">Global</h3>
+<ul>
+<li>EUR (Euro)</li>
+<li>USD (United States dollar)</li>
+<li>GBP (British pound sterling)</li>
+</ul>
+<h3 id="nordic">Nordic</h3>
+<ul>
+<li>DKK (Danish krone)</li>
+<li>NOK (Norwegian krone)</li>
+<li>SEK (Swedish krona)</li>
+</ul>
+<h3 id="other-eu">Other EU</h3>
+<ul>
+<li>CHF (Swiss franc)</li>
+<li>HUF (Hungarian forint)</li>
+<li>PLN (Polish złoty)</li>
+<li>RON (Romanian leu)</li>
+<li>CZK (Czech koruna)</li>
+<li>BGN (Bulgarian lev)</li>
+<li>HRK (Croatian kuna)</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Within the Paylike ecosystem you should use the <code>code</code> to refer to a currency.</p>
+<pre class="language-js"><code class="language-js">var currencies = require('@paylike/currencies');
+
+currencies;
+	/*
+	[
+		{
+			code: 'AED',
+			currency: 'United Arab Emirates dirham',
+			numeric: '784',
+			exponent: 2,
+		},
+		...
+		{
+			code: 'DKK',
+			currency: 'Danish krone',
+			numeric: '208',
+			exponent: 2,
+			funding: true,
+		},
+		...
+	]
+	*/
+
+// lookup by code
+currencies.byCode('AED');
+	// { code: 'AED', currency: 'United Arab Emirates dirham', numeric: '784' }
+
+currencies.byCode();
+	// Map()
+
+// list supported funding currencies
+currencies
+	.filter(x =&gt; x.funding)
+	.map(x =&gt; x.currency);
+	/*
+	[
+		'Bulgarian lev',
+		'Swiss franc',
+		'Czech koruna',
+		'Danish krone',
+		'Euro',
+		'Pound sterling',
+		'Croatian kuna',
+		'Hungarian forint',
+		'Norwegian krone',
+		'Polish złoty',
+		'Romanian leu',
+		'Swedish krona',
+		'United States dollar',
+	]
+	*/
+
+// Convert between minor and major respecting the exponent
+currencies.toMinor('DKK', 100.00);
+	// 10000
+
+currencies.toMajor('DKK', 10000);
+	// 100.00
+</code></pre>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="builder">
+  <span class="name"><a href="builder/builder-library.html">builder</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+          <dt id="paylike_currencies">
+  <span class="name"><a href="paylike_currencies/paylike_currencies-library.html">paylike_currencies</a></span> 
+
+</dt>
+<dd> 
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://paylike.io">paylike_currencies package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">paylike_currencies</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="builder/builder-library.html">builder</a></li>
+      <li><a href="paylike_currencies/paylike_currencies-library.html">paylike_currencies</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    paylike_currencies
+      1.0.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
