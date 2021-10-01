@@ -38,65 +38,20 @@ account, settlement and funding currency.
 
 ## Usage
 
-Within the Paylike ecosystem you should use the `code` to refer to a currency.
+Within the Paylike ecosystem you should use the `CurrencyCode` enum to refer to a currency.
 
-```js
-var currencies = require('@paylike/currencies');
-
-currencies;
-	/*
-	[
-		{
-			code: 'AED',
-			currency: 'United Arab Emirates dirham',
-			numeric: '784',
-			exponent: 2,
-		},
-		...
-		{
-			code: 'DKK',
-			currency: 'Danish krone',
-			numeric: '208',
-			exponent: 2,
-			funding: true,
-		},
-		...
-	]
-	*/
+```dart
+var currencies = PaylikeCurrencies();
+var eur = currencies.byCode(CurrencyCode.EUR);
 
 // lookup by code
-currencies.byCode('AED');
+currencies.byCode(CurrencyCode.AED);
 	// { code: 'AED', currency: 'United Arab Emirates dirham', numeric: '784' }
 
-currencies.byCode();
-	// Map()
-
-// list supported funding currencies
-currencies
-	.filter(x => x.funding)
-	.map(x => x.currency);
-	/*
-	[
-		'Bulgarian lev',
-		'Swiss franc',
-		'Czech koruna',
-		'Danish krone',
-		'Euro',
-		'Pound sterling',
-		'Croatian kuna',
-		'Hungarian forint',
-		'Norwegian krone',
-		'Polish złoty',
-		'Romanian leu',
-		'Swedish krona',
-		'United States dollar',
-	]
-	*/
-
 // Convert between minor and major respecting the exponent
-currencies.toMinor('DKK', 100.00);
+currencies.toMinor(CurrencyCode.DKK, 100.00);
 	// 10000
 
-currencies.toMajor('DKK', 10000);
+currencies.toMajor(CurrencyCode.DKK, 10000);
 	// 100.00
 ```
