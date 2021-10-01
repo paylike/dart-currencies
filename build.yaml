@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      paylike_currencies|currency_generator:
+        enabled: true
+        generate_for:
+          - "lib/src/paylike_currencies_base.dart"
+
+builders:
+  currency_generator:
+    target: ":paylike_currencies"
+    import: "package:paylike_currencies/builder.dart"
+    builder_factories: ["currencyBuilder"]
+    build_extensions: {".dart": [".currencies.g.part"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
