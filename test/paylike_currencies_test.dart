@@ -10,6 +10,7 @@ void main() {
       expect(currency.currency, 'Euro');
       expect(currency.numeric, 978);
       expect(currency.exponent, 2);
+      expect(currency.funding, true);
     });
 
     test('toMajor toMinor should work as expected', () {

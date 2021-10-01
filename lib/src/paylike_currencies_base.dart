@@ -17,14 +17,17 @@ class PaylikeCurrency {
   String currency;
   int numeric;
   int exponent;
+  bool funding;
   // Creates a PaylikeCurrency instance
-  PaylikeCurrency(this.code, this.currency, this.numeric, this.exponent);
+  PaylikeCurrency(
+      this.code, this.currency, this.numeric, this.exponent, this.funding);
   // Creates a PaylikeCurrency instance using JSON
   PaylikeCurrency.fromJSON(Map<String, dynamic> json)
       : code = json['code'],
         currency = json['currency'],
         numeric = int.parse(json['numeric']),
-        exponent = json['exponent'];
+        exponent = json['exponent'],
+        funding = json['funding'] != null;
 }
 
 // PaylikeCurrencies is responsible for currency related operations
@@ -37,6 +40,10 @@ class PaylikeCurrencies {
     }
     return element;
   }
+
+  // Lists all available currencies
+  List<PaylikeCurrency> list() => List.from(
+      PaylikeCurrencyCollection.currencies.entries.map((e) => e.value));
 
 // Provides a [PaylikeCurrency] based on [numeric]
   PaylikeCurrency byNumeric(int numeric) {

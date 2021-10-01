@@ -48,6 +48,9 @@ var eur = currencies.byCode(CurrencyCode.EUR);
 currencies.byCode(CurrencyCode.AED);
 	// { code: 'AED', currency: 'United Arab Emirates dirham', numeric: '784' }
 
+// get List<PaylikeCurrency>
+currencies.list();
+
 // Convert between minor and major respecting the exponent
 currencies.toMinor(CurrencyCode.DKK, 100.00);
 	// 10000
