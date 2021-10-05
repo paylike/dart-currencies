@@ -1,5 +1,6 @@
 import 'package:paylike_currencies/paylike_currencies.dart';
 import 'dart:math';
+import 'package:paylike_currencies/src/paylike_currency.dart';
 
 // Describes that a given currency the user is looking for
 // is missing from the collection
@@ -9,25 +10,6 @@ class MissingCurrency implements Exception {
   int? numeric;
   MissingCurrency.fromNumeric(this.numeric);
   MissingCurrency.fromCode(this.code);
-}
-
-// PaylikeCurrency describes a single currency in the collection
-class PaylikeCurrency {
-  String code;
-  String currency;
-  int numeric;
-  int exponent;
-  bool funding;
-  // Creates a PaylikeCurrency instance
-  PaylikeCurrency(
-      this.code, this.currency, this.numeric, this.exponent, this.funding);
-  // Creates a PaylikeCurrency instance using JSON
-  PaylikeCurrency.fromJSON(Map<String, dynamic> json)
-      : code = json['code'],
-        currency = json['currency'],
-        numeric = int.parse(json['numeric']),
-        exponent = json['exponent'],
-        funding = json['funding'] != null;
 }
 
 // PaylikeCurrencies is responsible for currency related operations

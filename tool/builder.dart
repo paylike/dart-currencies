@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:build/build.dart';
-import 'package:paylike_currencies/paylike_currencies.dart';
+import 'package:paylike_currencies/src/paylike_currency.dart';
 import 'package:source_gen/source_gen.dart';
 
 Builder currencyBuilder(BuilderOptions options) =>
@@ -42,7 +42,7 @@ class CurrencyGenerator extends Generator {
     outputClass.add('};}');
 
     return '''
-    import 'package:paylike_currencies/paylike_currencies.dart';
+    import 'package:paylike_currencies/src/paylike_currency.dart';
 
     ${outputEnum.join('')}
     ${outputClass.join('')}

@@ -4,7 +4,7 @@
 // CurrencyGenerator
 // **************************************************************************
 
-import 'package:paylike_currencies/paylike_currencies.dart';
+import 'package:paylike_currencies/src/paylike_currency.dart';
 
 enum CurrencyCode {
   AED,
@@ -148,7 +148,6 @@ enum CurrencyCode {
   USD,
   UYU,
   UZS,
-  VES,
   VND,
   VUV,
   WST,
@@ -339,8 +338,6 @@ class PaylikeCurrencyCollection {
         PaylikeCurrency('USD', 'United States dollar', 840, 2, true),
     CurrencyCode.UYU: PaylikeCurrency('UYU', 'Uruguayan peso', 858, 2, false),
     CurrencyCode.UZS: PaylikeCurrency('UZS', 'Uzbekistan som', 860, 2, false),
-    CurrencyCode.VES:
-        PaylikeCurrency('VES', 'Venezuelan bolívar soberano', 928, 2, false),
     CurrencyCode.VND: PaylikeCurrency('VND', 'Vietnamese dong', 704, 0, false),
     CurrencyCode.VUV: PaylikeCurrency('VUV', 'Vanuatu vatu', 548, 0, false),
     CurrencyCode.WST: PaylikeCurrency('WST', 'Samoan tala', 882, 2, false),
