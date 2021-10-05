@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the toMinor method from the PaylikeCurrencies class, for the Dart programming language.">
-  <title>toMinor method - PaylikeCurrencies class - paylike_currencies library - Dart API</title>
+  <meta name="description" content="API docs for the list method from the PaylikeCurrencies class, for the Dart programming language.">
+  <title>list method - PaylikeCurrencies class - paylike_currencies library - Dart API</title>
 
 
   
@@ -32,9 +32,9 @@
     <li><a href="../../index.html">paylike_currencies</a></li>
     <li><a href="../../paylike_currencies/paylike_currencies-library.html">paylike_currencies</a></li>
     <li><a href="../../paylike_currencies/PaylikeCurrencies-class.html">PaylikeCurrencies</a></li>
-    <li class="self-crumb">toMinor method</li>
+    <li class="self-crumb">list method</li>
   </ol>
-  <div class="self-name">toMinor</div>
+  <div class="self-name">list</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,17 +45,15 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">toMinor</span> method 
+<h1><span class="kind-method">list</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/num-class.html">num</a></span>
-<span class="name ">toMinor</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="toMinor-param-code"><span class="type-annotation"><a href="../../paylike_currencies/CurrencyCode.html">CurrencyCode</a></span> <span class="parameter-name">code</span>, </span></li>
-<li><span class="parameter" id="toMinor-param-major"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/num-class.html">num</a></span> <span class="parameter-name">major</span></span></li>
-</ol>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../paylike_currencies/PaylikeCurrency-class.html">PaylikeCurrency</a></span>&gt;</span></span>
+<span class="name ">list</span>(<wbr>)
 
       
 
@@ -66,8 +64,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">num toMinor(CurrencyCode code, num major) =&gt;
-    (major * pow(10, byCode(code).exponent)).round();</code></pre>
+  <pre class="language-dart"><code class="language-dart">List&lt;PaylikeCurrency&gt; list() =&gt; List.from(
+    PaylikeCurrencyCollection.currencies.entries.map((e) =&gt; e.value));</code></pre>
 </section>
 
 
@@ -84,7 +82,7 @@
   <li><a href="../../index.html">paylike_currencies</a></li>
   <li><a href="../../paylike_currencies/paylike_currencies-library.html">paylike_currencies</a></li>
   <li><a href="../../paylike_currencies/PaylikeCurrencies-class.html">PaylikeCurrencies</a></li>
-  <li class="self-crumb">toMinor method</li>
+  <li class="self-crumb">list method</li>
 </ol>
 
 

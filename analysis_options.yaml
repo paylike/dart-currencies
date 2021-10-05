@@ -21,7 +21,7 @@ include: package:lints/recommended.yaml
 
 analyzer:
   exclude:
-    - lib/builder.dart
+    - ./tool/builder.dart
     - lib/src/paylike_currencies_base.currency.g.dart
 
 # For more information about the core and recommended set of lints, see

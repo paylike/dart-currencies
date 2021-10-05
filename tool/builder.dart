@@ -5,10 +5,12 @@ import 'package:build/build.dart';
 import 'package:paylike_currencies/src/paylike_currency.dart';
 import 'package:source_gen/source_gen.dart';
 
+// @nodoc
 Builder currencyBuilder(BuilderOptions options) =>
     LibraryBuilder(CurrencyGenerator(), generatedExtension: '.currency.g.dart');
 
 /// Generates currency collection
+/// @nodoc
 class CurrencyGenerator extends Generator {
   const CurrencyGenerator();
   @override

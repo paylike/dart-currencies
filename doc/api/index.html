@@ -78,64 +78,22 @@ account, settlement and funding currency.</p>
 <li>HRK (Croatian kuna)</li>
 </ul>
 <h2 id="usage">Usage</h2>
-<p>Within the Paylike ecosystem you should use the <code>code</code> to refer to a currency.</p>
-<pre class="language-js"><code class="language-js">var currencies = require('@paylike/currencies');
-
-currencies;
-	/*
-	[
-		{
-			code: 'AED',
-			currency: 'United Arab Emirates dirham',
-			numeric: '784',
-			exponent: 2,
-		},
-		...
-		{
-			code: 'DKK',
-			currency: 'Danish krone',
-			numeric: '208',
-			exponent: 2,
-			funding: true,
-		},
-		...
-	]
-	*/
+<p>Within the Paylike ecosystem you should use the <code>CurrencyCode</code> enum to refer to a currency.</p>
+<pre class="language-dart"><code class="language-dart">var currencies = PaylikeCurrencies();
+var eur = currencies.byCode(CurrencyCode.EUR);
 
 // lookup by code
-currencies.byCode('AED');
+currencies.byCode(CurrencyCode.AED);
 	// { code: 'AED', currency: 'United Arab Emirates dirham', numeric: '784' }
 
-currencies.byCode();
-	// Map()
-
-// list supported funding currencies
-currencies
-	.filter(x =&gt; x.funding)
-	.map(x =&gt; x.currency);
-	/*
-	[
-		'Bulgarian lev',
-		'Swiss franc',
-		'Czech koruna',
-		'Danish krone',
-		'Euro',
-		'Pound sterling',
-		'Croatian kuna',
-		'Hungarian forint',
-		'Norwegian krone',
-		'Polish złoty',
-		'Romanian leu',
-		'Swedish krona',
-		'United States dollar',
-	]
-	*/
+// get List&lt;PaylikeCurrency&gt;
+currencies.list();
 
 // Convert between minor and major respecting the exponent
-currencies.toMinor('DKK', 100.00);
+currencies.toMinor(CurrencyCode.DKK, 100.00);
 	// 10000
 
-currencies.toMajor('DKK', 10000);
+currencies.toMajor(CurrencyCode.DKK, 10000);
 	// 100.00
 </code></pre>
 </section>
@@ -144,18 +102,11 @@ currencies.toMajor('DKK', 10000);
       <section class="summary">
           <h2>Libraries</h2>
         <dl>
-          <dt id="builder">
-  <span class="name"><a href="builder/builder-library.html">builder</a></span> 
-
-</dt>
-<dd> 
-</dd>
-
           <dt id="paylike_currencies">
   <span class="name"><a href="paylike_currencies/paylike_currencies-library.html">paylike_currencies</a></span> 
 
 </dt>
-<dd> 
+<dd>Describes available currencies in the Paylike ecosystem. <a href="paylike_currencies/paylike_currencies-library.html">[...]</a>
 </dd>
 
         </dl>
@@ -178,7 +129,6 @@ currencies.toMajor('DKK', 10000);
     <h5 class="hidden-xs"><span class="package-name">paylike_currencies</span> <span class="package-kind">package</span></h5>
     <ol>
       <li class="section-title">Libraries</li>
-      <li><a href="builder/builder-library.html">builder</a></li>
       <li><a href="paylike_currencies/paylike_currencies-library.html">paylike_currencies</a></li>
 </ol>
 
@@ -192,7 +142,7 @@ currencies.toMajor('DKK', 10000);
 <footer>
   <span class="no-break">
     paylike_currencies
-      1.0.0
+      1.0.3
   </span>
 
   
