@@ -48,6 +48,10 @@ var eur = currencies.byCode(CurrencyCode.EUR);
 currencies.byCode(CurrencyCode.AED);
 	// { code: 'AED', currency: 'United Arab Emirates dirham', numeric: '784' }
 
+// lookup CurrencyCode
+currencies.getCurrencyCode('EUR');
+	// CurrencyCode.EUR
+
 // get List<PaylikeCurrency>
 currencies.list();
 

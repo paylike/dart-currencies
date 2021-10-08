@@ -4,21 +4,31 @@ import 'package:paylike_currencies/src/paylike_currency.dart';
 
 // Describes that a given currency the user is looking for
 // is missing from the collection
-class MissingCurrency implements Exception {
+class MissingCurrencyException implements Exception {
   final String cause = 'Currency is missing';
   CurrencyCode? code;
   int? numeric;
-  MissingCurrency.fromNumeric(this.numeric);
-  MissingCurrency.fromCode(this.code);
+  String? requestCode;
+  MissingCurrencyException.fromNumeric(this.numeric);
+  MissingCurrencyException.fromCode(this.code);
+  MissingCurrencyException.fromStringCode(this.requestCode);
 }
 
 // PaylikeCurrencies is responsible for currency related operations
 class PaylikeCurrencies {
+  // Returns the CurrencyCode based on [code]
+  CurrencyCode getCurrencyCode(String code) {
+    return PaylikeCurrencyCollection.currencies.entries
+        .firstWhere((element) => element.value.code == code,
+            orElse: () => throw MissingCurrencyException.fromStringCode(code))
+        .key;
+  }
+
   // Provides a [PaylikeCurrency] based on [code]
   PaylikeCurrency byCode(CurrencyCode code) {
     var element = PaylikeCurrencyCollection.currencies[code];
     if (element == null) {
-      throw MissingCurrency.fromCode(code);
+      throw MissingCurrencyException.fromCode(code);
     }
     return element;
   }
@@ -31,7 +41,7 @@ class PaylikeCurrencies {
   PaylikeCurrency byNumeric(int numeric) {
     var element = PaylikeCurrencyCollection.currencies.entries.firstWhere(
         (element) => element.value.numeric == numeric,
-        orElse: () => throw MissingCurrency.fromNumeric(numeric));
+        orElse: () => throw MissingCurrencyException.fromNumeric(numeric));
     return element.value;
   }
 

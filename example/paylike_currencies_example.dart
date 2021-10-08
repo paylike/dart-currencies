@@ -9,4 +9,12 @@ void main() {
   for (var currency in all) {
     print(currency);
   }
+
+  CurrencyCode? current;
+  try {
+    current = currencies.getCurrencyCode('USD');
+    var usd = currencies.byCode(current);
+  } on MissingCurrencyException catch (e) {
+    print('${e.cause}, ${e.code}, ${e.numeric}, ${e.requestCode}');
+  }
 }

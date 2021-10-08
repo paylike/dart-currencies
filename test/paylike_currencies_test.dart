@@ -29,8 +29,15 @@ void main() {
         currencies.byNumeric(2355);
         fail('should not be able to reach this');
       } catch (e) {
-        expect(e is MissingCurrency, true);
-        expect((e as MissingCurrency).numeric, 2355);
+        expect(e is MissingCurrencyException, true);
+        expect((e as MissingCurrencyException).numeric, 2355);
+      }
+      try {
+        currencies.getCurrencyCode('EURO');
+        fail('should not be able to reach this');
+      } catch (e) {
+        expect(e is MissingCurrencyException, true);
+        expect((e as MissingCurrencyException).requestCode, 'EURO');
       }
     });
   });

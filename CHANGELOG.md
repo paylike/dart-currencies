@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Added new function to support getting currency code based on string code
+
 ## 1.0.3
 
 - Improved code generation setup
