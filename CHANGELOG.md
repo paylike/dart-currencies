@@ -1,3 +1,9 @@
+## 1.0.6
+
+- Added support for deprecation
+- Added deprecated currencies: MRO, STD, VES
+- Added back VEF
+
 ## 1.0.5
 
 - Fixed a minor pubspec issue

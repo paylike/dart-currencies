@@ -36,7 +36,7 @@ class CurrencyGenerator extends Generator {
       ${parsed.code},
       ''');
       outputClass.add('''
-        CurrencyCode.${parsed.code}: PaylikeCurrency('${parsed.code}', '${parsed.currency}', ${parsed.numeric}, ${parsed.exponent}, ${parsed.funding}),
+        CurrencyCode.${parsed.code}: PaylikeCurrency('${parsed.code}', '${parsed.currency}', ${parsed.numeric}, ${parsed.exponent}, ${parsed.funding}, ${parsed.deprecated}),
       ''');
     }
 

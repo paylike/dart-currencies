@@ -1,6 +1,5 @@
 import 'package:paylike_currencies/paylike_currencies.dart';
 import 'dart:math';
-import 'package:paylike_currencies/src/paylike_currency.dart';
 
 // Describes that a given currency the user is looking for
 // is missing from the collection
