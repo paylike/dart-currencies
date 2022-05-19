@@ -14,7 +14,7 @@ void main() {
     });
 
     test('toMajor toMinor should work as expected', () {
-      expect(currencies.toMajor(CurrencyCode.EUR, 100), 1.00);
+      expect(currencies.toMajor(CurrencyCode.EUR, 100), 1);
       expect(currencies.toMinor(CurrencyCode.EUR, 1), 100);
       expect(currencies.toMajor(CurrencyCode.JPY, 1), 1);
       expect(currencies.toMinor(CurrencyCode.JPY, 1), 1);
