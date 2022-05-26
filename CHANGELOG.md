@@ -1,3 +1,7 @@
+## 1.0.7
+
+- Fixed issues with documentation
+
 ## 1.0.6
 
 - Added support for deprecation

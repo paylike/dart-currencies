@@ -50,6 +50,9 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>PaylikeCurrencies is responsible for currency related operations</p>
+</section>
 
 
 
@@ -106,7 +109,7 @@
 
 </dt>
 <dd>
-   
+  Provides a <a href="../paylike_currencies/PaylikeCurrency-class.html">PaylikeCurrency</a> based on <code>code</code> 
   
 
 </dd>
@@ -119,7 +122,20 @@
 
 </dt>
 <dd>
-   
+  Provides a <a href="../paylike_currencies/PaylikeCurrency-class.html">PaylikeCurrency</a> based on <code>numeric</code> 
+  
+
+</dd>
+
+        <dt id="getCurrencyCode" class="callable">
+  <span class="name"><a href="../paylike_currencies/PaylikeCurrencies/getCurrencyCode.html">getCurrencyCode</a></span><span class="signature">(<wbr><span class="parameter" id="getCurrencyCode-param-code"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">code</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../paylike_currencies/CurrencyCode.html">CurrencyCode</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the CurrencyCode based on <code>code</code> 
   
 
 </dd>
@@ -132,7 +148,7 @@
 
 </dt>
 <dd>
-   
+  Lists all available currencies 
   
 
 </dd>
@@ -158,7 +174,8 @@
 
 </dt>
 <dd>
-   
+  Converts a currency to major value using its exponent
+e.g: 100 cents to 1 USD 
   
 
 </dd>
@@ -171,7 +188,8 @@
 
 </dt>
 <dd>
-   
+  Converts a currency to minor value using its exponent
+e.g: 1 USD to cents 
   
 
 </dd>
@@ -247,7 +265,7 @@
 
 
   <li class="section-title"><a href="../paylike_currencies/paylike_currencies-library.html#exceptions">Exceptions</a></li>
-  <li><a href="../paylike_currencies/MissingCurrency-class.html">MissingCurrency</a></li>
+  <li><a href="../paylike_currencies/MissingCurrencyException-class.html">MissingCurrencyException</a></li>
 </ol>
 
   </div>
@@ -268,6 +286,7 @@
     <li class="section-title"><a href="../paylike_currencies/PaylikeCurrencies-class.html#instance-methods">Methods</a></li>
     <li><a href="../paylike_currencies/PaylikeCurrencies/byCode.html">byCode</a></li>
     <li><a href="../paylike_currencies/PaylikeCurrencies/byNumeric.html">byNumeric</a></li>
+    <li><a href="../paylike_currencies/PaylikeCurrencies/getCurrencyCode.html">getCurrencyCode</a></li>
     <li><a href="../paylike_currencies/PaylikeCurrencies/list.html">list</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../paylike_currencies/PaylikeCurrencies/toMajor.html">toMajor</a></li>
@@ -289,7 +308,7 @@
 <footer>
   <span class="no-break">
     paylike_currencies
-      1.0.3
+      1.0.6
   </span>
 
   

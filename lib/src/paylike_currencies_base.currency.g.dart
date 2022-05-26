@@ -6,6 +6,7 @@
 
 import 'package:paylike_currencies/src/paylike_currency.dart';
 
+/// Code used when referencing a currency
 enum CurrencyCode {
   AED,
   AFN,
@@ -165,6 +166,7 @@ enum CurrencyCode {
   ZWL,
 }
 
+/// Collection of all available currencies by [CurrencyCode]
 class PaylikeCurrencyCollection {
   static final Map<CurrencyCode, PaylikeCurrency> currencies = {
     CurrencyCode.AED: PaylikeCurrency(

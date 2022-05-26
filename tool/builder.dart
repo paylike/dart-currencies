@@ -20,12 +20,14 @@ class CurrencyGenerator extends Generator {
     List<dynamic> currencies = jsonDecode(raw);
 
     final outputEnum = <String>[
-      '''enum CurrencyCode {
+      '''/// Code used when referencing a currency
+enum CurrencyCode {
 
         '''
     ];
     final outputClass = <String>[
-      '''class PaylikeCurrencyCollection {
+      '''/// Collection of all available currencies by [CurrencyCode]
+class PaylikeCurrencyCollection {
           static final Map<CurrencyCode, PaylikeCurrency> currencies = {
       
       '''

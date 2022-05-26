@@ -60,6 +60,9 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Provides a <a href="../../paylike_currencies/PaylikeCurrency-class.html">PaylikeCurrency</a> based on <code>numeric</code></p>
+</section>
 
 
     
@@ -68,7 +71,7 @@
   <pre class="language-dart"><code class="language-dart">PaylikeCurrency byNumeric(int numeric) {
   var element = PaylikeCurrencyCollection.currencies.entries.firstWhere(
       (element) =&gt; element.value.numeric == numeric,
-      orElse: () =&gt; throw MissingCurrency.fromNumeric(numeric));
+      orElse: () =&gt; throw MissingCurrencyException.fromNumeric(numeric));
   return element.value;
 }</code></pre>
 </section>
@@ -107,6 +110,7 @@
     <li class="section-title"><a href="../../paylike_currencies/PaylikeCurrencies-class.html#instance-methods">Methods</a></li>
     <li><a href="../../paylike_currencies/PaylikeCurrencies/byCode.html">byCode</a></li>
     <li><a href="../../paylike_currencies/PaylikeCurrencies/byNumeric.html">byNumeric</a></li>
+    <li><a href="../../paylike_currencies/PaylikeCurrencies/getCurrencyCode.html">getCurrencyCode</a></li>
     <li><a href="../../paylike_currencies/PaylikeCurrencies/list.html">list</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../paylike_currencies/PaylikeCurrencies/toMajor.html">toMajor</a></li>
@@ -131,7 +135,7 @@
 <footer>
   <span class="no-break">
     paylike_currencies
-      1.0.3
+      1.0.6
   </span>
 
   

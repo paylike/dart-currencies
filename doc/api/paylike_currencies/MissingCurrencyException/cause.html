@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the toMinor method from the PaylikeCurrencies class, for the Dart programming language.">
-  <title>toMinor method - PaylikeCurrencies class - paylike_currencies library - Dart API</title>
+  <meta name="description" content="API docs for the cause property from the MissingCurrencyException class, for the Dart programming language.">
+  <title>cause property - MissingCurrencyException class - paylike_currencies library - Dart API</title>
 
 
   
@@ -31,10 +31,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">paylike_currencies</a></li>
     <li><a href="../../paylike_currencies/paylike_currencies-library.html">paylike_currencies</a></li>
-    <li><a href="../../paylike_currencies/PaylikeCurrencies-class.html">PaylikeCurrencies</a></li>
-    <li class="self-crumb">toMinor method</li>
+    <li><a href="../../paylike_currencies/MissingCurrencyException-class.html">MissingCurrencyException</a></li>
+    <li class="self-crumb">cause property</li>
   </ol>
-  <div class="self-name">toMinor</div>
+  <div class="self-name">cause</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,33 +45,24 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">toMinor</span> method 
+<h1><span class="kind-property">cause</span> property 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
-    <section class="multi-line-signature">
-      
+        <section class="multi-line-signature">
+          <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>
+          <span class="name ">cause</span>
+          <div class="features">final</div>
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/num-class.html">num</a></span>
-<span class="name ">toMinor</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="toMinor-param-code"><span class="type-annotation"><a href="../../paylike_currencies/CurrencyCode.html">CurrencyCode</a></span> <span class="parameter-name">code</span>, </span></li>
-<li><span class="parameter" id="toMinor-param-major"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/num-class.html">num</a></span> <span class="parameter-name">major</span></span></li>
-</ol>)
+        </section>
+        
 
-      
-
-    </section>
-    
-<section class="desc markdown">
-  <p>Converts a currency to minor value using its exponent
-e.g: 1 USD to cents</p>
-</section>
-
-
-    
+        
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">num toMinor(CurrencyCode code, num major) =&gt;
-    (major * pow(10, byCode(code).exponent)).round();</code></pre>
+  <pre class="language-dart"><code class="language-dart">final String cause = &#39;Currency is missing&#39;;
+
+</code></pre>
 </section>
 
 
@@ -87,35 +78,35 @@ e.g: 1 USD to cents</p>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../../index.html">paylike_currencies</a></li>
   <li><a href="../../paylike_currencies/paylike_currencies-library.html">paylike_currencies</a></li>
-  <li><a href="../../paylike_currencies/PaylikeCurrencies-class.html">PaylikeCurrencies</a></li>
-  <li class="self-crumb">toMinor method</li>
+  <li><a href="../../paylike_currencies/MissingCurrencyException-class.html">MissingCurrencyException</a></li>
+  <li class="self-crumb">cause property</li>
 </ol>
 
 
-    <h5>PaylikeCurrencies class</h5>
+    <h5>MissingCurrencyException class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../paylike_currencies/PaylikeCurrencies-class.html#constructors">Constructors</a></li>
-    <li><a href="../../paylike_currencies/PaylikeCurrencies/PaylikeCurrencies.html">PaylikeCurrencies</a></li>
+    <li class="section-title"><a href="../../paylike_currencies/MissingCurrencyException-class.html#constructors">Constructors</a></li>
+    <li><a href="../../paylike_currencies/MissingCurrencyException/MissingCurrencyException.fromCode.html">fromCode</a></li>
+    <li><a href="../../paylike_currencies/MissingCurrencyException/MissingCurrencyException.fromNumeric.html">fromNumeric</a></li>
+    <li><a href="../../paylike_currencies/MissingCurrencyException/MissingCurrencyException.fromStringCode.html">fromStringCode</a></li>
 
 
-    <li class="section-title inherited">
-      <a href="../../paylike_currencies/PaylikeCurrencies-class.html#instance-properties">Properties</a>
+    <li class="section-title">
+      <a href="../../paylike_currencies/MissingCurrencyException-class.html#instance-properties">Properties</a>
     </li>
+    <li><a href="../../paylike_currencies/MissingCurrencyException/cause.html">cause</a></li>
+    <li><a href="../../paylike_currencies/MissingCurrencyException/code.html">code</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li><a href="../../paylike_currencies/MissingCurrencyException/numeric.html">numeric</a></li>
+    <li><a href="../../paylike_currencies/MissingCurrencyException/requestCode.html">requestCode</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
-    <li class="section-title"><a href="../../paylike_currencies/PaylikeCurrencies-class.html#instance-methods">Methods</a></li>
-    <li><a href="../../paylike_currencies/PaylikeCurrencies/byCode.html">byCode</a></li>
-    <li><a href="../../paylike_currencies/PaylikeCurrencies/byNumeric.html">byNumeric</a></li>
-    <li><a href="../../paylike_currencies/PaylikeCurrencies/getCurrencyCode.html">getCurrencyCode</a></li>
-    <li><a href="../../paylike_currencies/PaylikeCurrencies/list.html">list</a></li>
+    <li class="section-title inherited"><a href="../../paylike_currencies/MissingCurrencyException-class.html#instance-methods">Methods</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li><a href="../../paylike_currencies/PaylikeCurrencies/toMajor.html">toMajor</a></li>
-    <li><a href="../../paylike_currencies/PaylikeCurrencies/toMinor.html">toMinor</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
 
-    <li class="section-title inherited"><a href="../../paylike_currencies/PaylikeCurrencies-class.html#operators">Operators</a></li>
+    <li class="section-title inherited"><a href="../../paylike_currencies/MissingCurrencyException-class.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 

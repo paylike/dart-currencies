@@ -50,6 +50,9 @@
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>PaylikeCurrency describes a single currency in the collection</p>
+</section>
 
 
 
@@ -58,16 +61,16 @@
 
       <dl class="constructor-summary-list">
         <dt id="PaylikeCurrency" class="callable">
-          <span class="name"><a href="../paylike_currencies/PaylikeCurrency/PaylikeCurrency.html">PaylikeCurrency</a></span><span class="signature">(<span class="parameter" id="-param-code"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">code</span>, </span><span class="parameter" id="-param-currency"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">currency</span>, </span><span class="parameter" id="-param-numeric"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">numeric</span>, </span><span class="parameter" id="-param-exponent"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">exponent</span>, </span><span class="parameter" id="-param-funding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">funding</span></span>)</span>
+          <span class="name"><a href="../paylike_currencies/PaylikeCurrency/PaylikeCurrency.html">PaylikeCurrency</a></span><span class="signature">(<span class="parameter" id="-param-code"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">code</span>, </span><span class="parameter" id="-param-currency"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">currency</span>, </span><span class="parameter" id="-param-numeric"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">numeric</span>, </span><span class="parameter" id="-param-exponent"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">exponent</span>, </span><span class="parameter" id="-param-funding"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">funding</span>, </span><span class="parameter" id="-param-deprecated"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">deprecated</span></span>)</span>
         </dt>
         <dd>
-           
+          Creates a PaylikeCurrency instance 
         </dd>
         <dt id="PaylikeCurrency.fromJSON" class="callable">
           <span class="name"><a href="../paylike_currencies/PaylikeCurrency/PaylikeCurrency.fromJSON.html">PaylikeCurrency.fromJSON</a></span><span class="signature">(<span class="parameter" id="fromJSON-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
         </dt>
         <dd>
-           
+          Creates a PaylikeCurrency instance using JSON 
         </dd>
       </dl>
     </section>
@@ -82,7 +85,7 @@
 
 </dt>
 <dd>
-   
+  Currency code (e.g. USD, EUR, GBP) 
   <div class="features">read / write</div>
 
 </dd>
@@ -93,7 +96,18 @@
 
 </dt>
 <dd>
-   
+  Currency name (e.g. United States dollar, Euro, Pound Sterling) 
+  <div class="features">read / write</div>
+
+</dd>
+
+        <dt id="deprecated" class="property">
+  <span class="name"><a href="../paylike_currencies/PaylikeCurrency/deprecated.html">deprecated</a></span>
+  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> 
+
+</dt>
+<dd>
+  Indicates if the given currency is supported yet (e.g. the old Venezuelan bolívar soberan is deprecated now) 
   <div class="features">read / write</div>
 
 </dd>
@@ -104,7 +118,7 @@
 
 </dt>
 <dd>
-   
+  Exponent to use with a given currency 
   <div class="features">read / write</div>
 
 </dd>
@@ -115,7 +129,7 @@
 
 </dt>
 <dd>
-   
+  Indicates currency support for your merchant account 
   <div class="features">read / write</div>
 
 </dd>
@@ -137,7 +151,7 @@
 
 </dt>
 <dd>
-   
+  Numeric code for the currency (e.g. 840, 978, 826) 
   <div class="features">read / write</div>
 
 </dd>
@@ -243,7 +257,7 @@
 
 
   <li class="section-title"><a href="../paylike_currencies/paylike_currencies-library.html#exceptions">Exceptions</a></li>
-  <li><a href="../paylike_currencies/MissingCurrency-class.html">MissingCurrency</a></li>
+  <li><a href="../paylike_currencies/MissingCurrencyException-class.html">MissingCurrencyException</a></li>
 </ol>
 
   </div>
@@ -261,6 +275,7 @@
     </li>
     <li><a href="../paylike_currencies/PaylikeCurrency/code.html">code</a></li>
     <li><a href="../paylike_currencies/PaylikeCurrency/currency.html">currency</a></li>
+    <li><a href="../paylike_currencies/PaylikeCurrency/deprecated.html">deprecated</a></li>
     <li><a href="../paylike_currencies/PaylikeCurrency/exponent.html">exponent</a></li>
     <li><a href="../paylike_currencies/PaylikeCurrency/funding.html">funding</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
@@ -286,7 +301,7 @@
 <footer>
   <span class="no-break">
     paylike_currencies
-      1.0.3
+      1.0.6
   </span>
 
   

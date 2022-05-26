@@ -55,6 +55,9 @@
     </section>
 
     
+<section class="desc markdown">
+  <p>Creates a PaylikeCurrency instance using JSON</p>
+</section>
 
 
     
@@ -65,7 +68,8 @@
       currency = json[&#39;currency&#39;],
       numeric = int.parse(json[&#39;numeric&#39;]),
       exponent = json[&#39;exponent&#39;],
-      funding = json[&#39;funding&#39;] != null;</code></pre>
+      funding = json[&#39;funding&#39;] != null,
+      deprecated = json[&#39;deprecated&#39;] != null;</code></pre>
 </section>
 
 
@@ -99,6 +103,7 @@
     </li>
     <li><a href="../../paylike_currencies/PaylikeCurrency/code.html">code</a></li>
     <li><a href="../../paylike_currencies/PaylikeCurrency/currency.html">currency</a></li>
+    <li><a href="../../paylike_currencies/PaylikeCurrency/deprecated.html">deprecated</a></li>
     <li><a href="../../paylike_currencies/PaylikeCurrency/exponent.html">exponent</a></li>
     <li><a href="../../paylike_currencies/PaylikeCurrency/funding.html">funding</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
@@ -127,7 +132,7 @@
 <footer>
   <span class="no-break">
     paylike_currencies
-      1.0.3
+      1.0.6
   </span>
 
   
